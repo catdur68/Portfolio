@@ -1,0 +1,253 @@
+/*BODY*/
+body {
+    margin: 0%; /*this ensures our site displays all the way
+    to the edge of the browser screen*/
+}
+
+/*NAVBAR*/
+.Navbar { /*this is the frame of the navbar*/
+    overflow: hidden; /*This ensures that any content that overflows 
+    beyond the boundary of our nav bar is not displayed */
+    background-color: black;
+    position: fixed; /*this locks the navbar at the top of
+    the screen as we scroll up and down*/
+    top: 0; /*eliminates any empty space display above Navbar*/
+    width: 100%; /*ensures the navbar span the entire width of the page*/
+    z-index: 1; /*ensures other elements don't display over
+    the navbar*/ 
+}
+/*Navbar content (text)*/
+.Navbar a {/*the Home/About/GitHub/Contact links*/
+    float: left; /*ensures that the contents (text) is on the left side of the navbar*/
+    display: block; /*ensures that all contents (text) will be aligned 
+    on the same line or row, instead of a new line below*/
+    color: antiquewhite; /*font color for the content (text)*/
+    padding: 14px 16px; /*adds space around the text*/
+    text-decoration: none; /*removes the default underlines under the text*/
+    font-family: Avant Garde, Helvetica;
+    font-size: 20px;
+    text-align: center; /*centers the text within its box*/
+}
+/*Navbar hover effect */
+.Navbar a:hover {
+    background-color: rgb(248, 248, 245); /*changes the background color to white when we hover*/
+    color: rgb(31, 39, 46); /*changes the font color to dark Gray when we hover*/
+    font-weight: bold; /*changes the text to bold when we hover*/
+}
+
+/*Navbar home (active) button*/
+.Navbar a.active {/*the active selector styles a link*/
+    background-color: darkgray; /*background color of the Home button when it is not hovered*/
+}
+
+/********HOME PAGE VIDEO**********/
+#Typing_Video {
+    position: fixed; /*this fixes the video to the page*/
+    right: 0; /*this ensures no space between the edge of the video and the edge of the page*/
+    bottom: 0; /*this ensures no space between the edge of the video and the edge of the page*/
+    min-width: 100%; /*ensures that the video is displayed across the full width of the page*/
+    z-index: -1; /*makes the video be in the background*/
+}
+/*****TEXT OVER VIDEO******/
+.Video_Text {
+    background: rgba(0, 0, 0, .5);/*the .5 provides a semi-transparent background for the text to sit over*/
+    color: whitesmoke;
+    width: 100%;
+    padding: 20px;/*so that the text does not go all the way to the edges*/
+    margin-top: 23%;
+    font-style: normal;
+}
+/*******STARTING THE 3 ROWS / 2 COLUMNS SECTION**********/
+/***this will be treated like a table. This section covers the styling of the rows and columns.***/
+
+* {/* the asterisk is a universal selector that applies this effect to all elements on the page*/
+    box-sizing: border-box;
+}
+
+.Column_1 { /*COLUMN 1 CONTAINS TEXT OR FORM*/
+    float: left;
+    width: 50%; /*this ensures one column takes only half the page width*/
+    padding: 10px;
+    padding-top: 3%; /*this ensures there is pace between the top of the column and our headings*/
+    height: 400px; /*this sets the height of the column. If the text becomes longer, this will need to be adjusted*/
+    background-color: rgb(252, 251, 249);
+}
+.Column_2 {/*COLUMN 2 CONTAINS IMAGES*/
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 1.9%;
+    height: 400px;
+    background-color: #79746b;
+}
+.Column_3 {/*IMAGE - something is different about this image (coordinate r3;col1)*/
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 3.5%;
+    height: 450px;
+    background-color: #79746b;
+}
+.Row:after {
+    /*this inserts something after the content of selected elements*/
+    content: ""; /*By leaving this blank, we are allowing the footer to be displayed.
+    removing it makes the footer overwrite a column*/
+    display: table; /*this display property specifies the type of display behavior;
+    the table value tells the browser to treat the elements as a table*/
+    clear: both; /*this clears any other elements from floating on the left or right
+    of an element*/
+}
+/************************************************************************************/
+/*************COLUMN CONTENT**************/
+/*images*/
+img {
+    filter: grayscale(75%);/*this rids our pictures of 75% of their color*/
+    border-radius: 8px; /*this creates a rounded edge to the image*/
+    max-width: 100%;
+    height: 340px;/*Remember that we set the height of the column to 400 (row 1 & 2) and 450px (row 3)*/
+    margin-left: auto; /*this in combination with margin-right auto centers our images*/
+    margin-right: auto;/*NOTE: I COULD NOT SEE ANY DIFFERENCE WHEN I RAN THESE 2 LINES*/
+    display: block; /*by specifiying block display we can ensure our images are able to be centered*
+    /*NOTE: ok - that really centered the image, unlike margin- left/right*/
+}
+img:hover {
+    filter: grayscale(5%); /*brings back most of the image's color when hovered over*/
+    transition: transform 1s;
+    transform: scale(1.1)
+}
+/*form*/
+form {
+    border-radius: 5px;
+    background-color: rgb(252, 251, 249);
+    padding: 20px; /*puts some space between the input cell and edges of the form*/
+    font-family: 'Trebuchet MS', Optima;
+}
+
+    /*input*/
+input[type="text"] {/*notice the square brackets - also input has type and method associated with it.
+    This is really about the input cell and the text in it (the input from the user)*/
+    box-sizing: border-box; /*we defined this earlier for the whole webpage - it helps keep the placement/placing
+    the cell element relative to all the other boxed elements in the other rows*/
+    width: 100%;
+    border: 1px solid #ccc; 
+    border-radius: 4px;/*creates a rounded edge to the input cell*/
+    padding: 12px; /*adds space between text and ALL edges of the cell*/
+    margin-top: 6px;
+    margin-bottom: 16px;/*this also get the headline to centers on its line (sometimes)*/
+    resize: vertical; /*this specified how an element is resized; vertical allows the user 
+    to resize the height of the element*/
+    font-family: Perpetua, Rockwell Extra Bold;/*when the user starts typing the text appears in bold*/
+}
+    /*SUBMIT BUTTON*/
+input[type="submit"] {
+    /*this covers the submit button itself - The button is already changing its looks when hovered, probably as an
+    innate definition of being a button or the active element of the form*/ 
+    background-color: black;
+    color: white; /*font color inside the button*/
+    font-weight: bold;
+    font-family: Perpetua, Rockwell Extra bold;
+    display: block;
+    padding: 12px 20px;/*12px space up and down, 20px space left and right for the text inside the button*/
+    margin-left: auto;
+    margin-right: auto;/*at this point these 2 lines of codes placed the submit button in the middle of the line*/
+    border: none;/*removes the default border*/
+    border-radius: 4px;
+    cursor: pointer;
+}
+    /*SUBMIT BUTTON HOVER EFFECT*/
+input[type="submit"]:hover {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    transform: scale(1.5);/*makes the button increase 1.5 times in sizes*/
+}
+/***********FOOTER**********************/
+footer {
+    padding: 2%;
+    background-color: rgb(252, 251, 249);
+}
+
+/******************************************************************************************************
+HEADINGS, PARAGRAPHS, LABELS, ANCHORS, ETC...
+*******************************************************************************************************
+HEADINGS - h1 ELEMENTS
+**********************
+--> Catherine Durand in text over video
+--> About in the text column 
+--> GitHub in the text column
+--> Contact in the Form Column
+*/
+h1 {
+    text-transform: uppercase; /*capitalizing h1 headings*/
+    font-family: "Trebuchet MS", Optima;
+    text-align: center;
+    margin-top: 3%; /*adding small margin above the heading*/
+    font-style: normal;
+    color: #1a1a1a;
+}
+h1:hover {
+    color: rgb(4, 35, 119);
+    font-weight: bold;
+    transition: transform;
+    transform: scale(1.2)
+}
+/*PARAGRAPHS - p ELEMENTS
+*************************
+-->the computer programmer is a creator.... (text over image on Home page)
+-->I am a software developer... (Row 1 column 2 - About Row)
+-->You can view my coding... (Row 2 column 1 - GitHub Row)
+*/
+p {
+    font-family: Perpetua, Rockwell Extra Bold;
+    font-size: 20px;
+    letter-spacing: 1px;/*this expands the text slightly*/
+    text-align: justify;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+p:hover {
+    color: #00004d;
+    transition: transform 1s;
+    transform: scale(1.01);
+}
+
+/*CENTER element*
+--> found in the video text and the GitHub part*/
+center {
+    font-family: Perpetua, Rockwell Extra Bold;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+center:hover {
+    font-weight: normal;
+    transition: transform;
+    transform: scale(1.1)
+}
+/*Anchor Elements*/
+a {
+    color: blue; /*making all links blue*/
+}
+/*Quotation elements (text over video Home page)*/
+q {
+    font-style: italic;
+    font-weight: normal;
+    color: rgb(245, 203, 111);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

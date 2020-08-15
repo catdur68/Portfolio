@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--saved from url=see downloads-->
+<html lang="en">
+<!--head-->
+<head>
+    <meta charset="UTF-8">
+    <title>Catherine Durand</title>
+    <link rel="stylesheet" type="text/css" href="Stylesheet/Catherine_Portfolio.css">
+</head>
+
+<!--body-->
+<body>
+
+<!--Navbar-->
+    <div class="Navbar">
+        <a class="active" href="#Home">Home</a> 
+        <!--this link will behave differently than the other ones-->
+        <a href="#About">About</a>
+        <a href="#GitHub">GitHub</a>
+        <a href="#Contact">Contact</a>
+    </div>
+
+<!--Home Section-->
+    <br> <!--inserts space between the navbar and first heading-->
+    <br>
+<!--Typing video-->
+    <div id="Home">
+        <video autoplay muted loop id="Typing_Video"> <!--video plays automatically on a loop with no sound-->
+            <source src="Stylesheet/Video/Typing.mp4" type="video/mp4">
+                <!--message if video fails to rune--> Your browser does not support HMTL5 video.
+        </video>
+    </div>
+
+    <!--TEXT PLACED OVER THE AUTOPLAY VIDEO-->
+    <div class="Video_Text">
+        <h1 style="color: whitesmoke;">Catherine Durand's Portfolio</h1>
+            <p>
+                <strong>
+                    <center>
+                        <q>The computer programmer is a creator of universes for which he alsone is the lawgiver.
+                        <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority<br> to arrange a stage or
+                        field of battle and to command such unswervingly dutifyl actors or troops.
+                        </q>
+                        <br>-Joseph Weizenbaum<br>
+                        <br>
+                        My name is Catherine Durand. Welcome to my Portfolio website.<br> On it, I will tell you about my background and experience.<br>
+                        Thank you for stopping by and enjoy!
+                    </center>
+                </strong>
+            </p>
+    </div>
+
+    <!--Dividing the rest of the page into 3 rows / 2 columns per row
+    There is About row, a GitHub row, and a Contact row. 
+    The About and GitHub rows have 1 column for text (column 1) and 1 column for an image (column 2).
+    The Contact row has 1 column for an image (column 3) and the second column for a form (column 1)
+    Each text column contains a headline (h1) and a paragraph.-->
+
+    <!--About Section-->
+    <div class="Row" id="About">
+        <div class="Column_2"> <!--Left (first Column from left to right--> <!--loads an IMAGE-->
+            <img src="Stylesheet/Images/Development.jpg" alt="Laptop">
+        </div>
+        <div class="Column_1"> <!--Right column (second Column from left to right--> <!--TEXT-->
+            <h1>About</h1>
+                <p>I am a software developer who loves to code! After most of my career spent in business administration,
+                     I am returning to the software industry with passion.<br><br>
+                    I am a graduate of <a ref=""https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>'s 
+                    <!--_blank loads the url in a new window-->Software Developer boot camp, and trained and experienced in the following web and programming languages: HTML, CSS, 
+                    JavaScript, SQL, C# and more. <br><br>I am a full-stack developer and would love to work with you on your project.
+                    <a href="#Contact"> Contact</a> me below!
+                </p>
+        </div>
+    </div>
+
+    <!--GitHub Section-->
+    <div class="Row" id="GitHub">
+        <div class="Column_1"> <!--Left Column - TEXT column-->
+            <h1>GitHub</h1>
+                <p>You can preview my coding projectson my GitHub profile here:<br>
+                    <center>
+                        <a href="https://github.com/catdur68" target="_blank">Catherine Durand GitHub</a>
+                    </center>
+                </p>
+        </div>
+        <div class="Column_2"> <!--Right Column - IMAGE COLUMN-->
+            <a href="https://github.com/catdur68" target="_blank">
+                <img src="Stylesheet/Images/GitHub.png" alt="GitHub"></a>
+        </div>
+    </div>
+
+    <!--Contact Section-- which has an IMAGE on the left and a FORM on the right-->
+    <div class="Row" id="Contact">
+        <div class="Column_3"> <!--Left Column - IMAGE-->
+            <img src="Stylesheet/Images/Contact.jpg">
+        </div>
+        <div class="Column_1"> <!--Right Column - CONTACT FORM-->
+            <h1>Contact</h1>
+                <form action="" method="get"> <!--specifies where to send the form data and how; left blank (for now?)-->
+                    <label>Name:</label>
+                        <input type="text" placeholder="Please enter your name here.">
+                    <label>Email</label>
+                        <input type="text" id="Email" placeholder="Please enter your email here.">
+                    <label>Message</label>
+                        <input type="text" id="Message" name="Message" placeholder="Please write your message here.">
+                        <input type="submit" value="submit">
+                </form>
+        </div>
+    </div>
+    <!--FOOTER SECTION-->
+    <footer>
+        <p>
+            <center>&copy Catherine Durand, <a ref="https://learningcodinganywhere.com/">The Tech Academy</a></center>
+        </p>
+    </footer>
+
+
+</body>
+<</html>
