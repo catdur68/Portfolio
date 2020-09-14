@@ -9,15 +9,17 @@
 </head>
 
 <!--body-->
-<body>
+<body class="Background">
 
 <!--Navbar-->
     <div class="Navbar">
         <a class="active" href="#Home">Home</a> 
         <!--this link will behave differently than the other ones-->
+        <a href="#Slideshow">Slideshow</a>
         <a href="#About">About</a>
         <a href="#GitHub">GitHub</a>
-        <a href="#Contact">Contact</a>
+        <a onclick="openForm()" ondblclick="closeForm()">Contact</a>
+        <!--if the contact button is clicked in the nav bar the openForm function runs-->
     </div>
 
 <!--Home Section-->
@@ -25,9 +27,13 @@
     <br>
 <!--Typing video-->
     <div id="Home">
+        <br> <!--inserts breaks to add space between the nav bar and the first heading-->
+        <br>
+        
+        <!--video-->
         <video autoplay muted loop id="Typing_Video"> <!--video plays automatically on a loop with no sound-->
             <source src="Stylesheet/Video/Typing.mp4" type="video/mp4">
-                <!--message if video fails to rune--> Your browser does not support HMTL5 video.
+                <!--message if video fails to run--> Your browser does not support HMTL5 video.
         </video>
     </div>
 
@@ -49,7 +55,67 @@
                 </strong>
             </p>
     </div>
+<!-- Slideshow section -->
+<div id="Slideshow">
+    <div id="Slideshow_Background"> 
+      <div id="Slideshow_Container">
+        
+		<div class="mySlides fade">
+          <div class="Slide_Number">1 / 6</div>
+            <img class="Slide_Show_Images" src="Stylesheet/Images/Pic_of_me4.png" style="width:100%">
+              <div class="text">I'm available to assist you on your project!</div>
+        </div>
+        
+		<div class="mySlides fade">
+          <div class="Slide_Number">2 / 6</div>
+            <img class="Slide_Show_Images" src="Stylesheet/Images/HTML_CSS_and_JavaScript.jpeg" style="width:100%">
+              <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+        </div>
 
+        <div class="mySlides fade">
+          <div class="Slide_Number">3 / 6</div>
+            <img class="Slide_Show_Images" src="Stylesheet/Images/Python.png" style="width:100%">
+              <div class="text">the popular programming language Python,</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="Slide_Number">4 / 6</div>
+            <img class="Slide_Show_Images" src="Stylesheet/Images/C_Sharp_and_Dot_NET.png" style="width:100%">
+              <div class="text">C#, .NET Framework, ASP.NET, MVC,</div>
+        </div>
+
+		<div class="mySlides fade">
+	      <div class="Slide_Number">5 / 6</div>
+			<img class="Slide_Show_Images" src="Stylesheet/Images/SQL_and_Database.jpg" style="width:100%">
+              <div class="text">back end development, databases and SQL.</div>
+			</div>
+
+		<div class="mySlides fade">
+		  <div class="Slide_Number">6 / 6</div>
+			<img class="Slide_Show_Images" src="Stylesheet/Images/Coding_1.jpg" style="width:100%">
+			  <div class="text"> 
+				<a onclick="openForm()" href="#Contact" style="color:white;">Contact me now!</a>
+			  </div>
+	    </div>
+	
+		  <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+		  <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+		
+	  </div>
+  <br>
+
+      <div style="text-align:center">
+ 
+		<span class="dot" onclick="currentSlide(1)"></span> 
+		<span class="dot" onclick="currentSlide(2)"></span> 
+		<span class="dot" onclick="currentSlide(3)"></span> 
+		<span class="dot" onclick="currentSlide(4)"></span> 
+		<span class="dot" onclick="currentSlide(5)"></span> 
+		<span class="dot" onclick="currentSlide(6)"></span> 
+
+      </div>
+    </div>
+  </div>
     <!--Dividing the rest of the page into 3 rows / 2 columns per row
     There is About row, a GitHub row, and a Contact row. 
     The About and GitHub rows have 1 column for text (column 1) and 1 column for an image (column 2).
@@ -63,12 +129,12 @@
         </div>
         <div class="Column_1"> <!--Right column (second Column from left to right--> <!--TEXT-->
             <h1>About</h1>
-                <p>I am a software developer who loves to code! After most of my career spent in business administration,
-                     I am returning to the software industry with passion.<br><br>
-                    I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>'s 
+                <p>I am a software developer in trainee who loves to code! After most of my career spent in business administration,
+                     I am returning to the world of data with passion.<br><br>
+                    In December 2020, I will be a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>'s 
                     <!--_blank loads the url in a new window-->Software Developer Certification, and trained and experienced 
                     in the following web and programming languages: HTML, CSS, 
-                    JavaScript, SQL, C#, Python, R and more. <br><br>I am a full-stack developer and would love to work with you on your project.
+                    JavaScript, SQL, C#, Python, R and more. <br><br>I will be a full-stack developer and would love to know what you are looking for and how I could contribute.
                     <a href="#Contact"> Contact</a> me below!
                 </p>
         </div>
@@ -78,7 +144,7 @@
     <div class="Row" id="GitHub">
         <div class="Column_1"> <!--Left Column - TEXT column-->
             <h1>GitHub</h1>
-                <p>You can preview my coding projectson my GitHub profile here:<br>
+                <p>You can preview my coding projects on my GitHub profile here:<br>
                     <center>
                         <a href="https://github.com/catdur68" target="_blank">Catherine Durand GitHub</a>
                     </center>
@@ -91,23 +157,28 @@
     </div>
 
     <!--Contact Section-- which has an IMAGE on the left and a FORM on the right-->
-    <div class="Row" id="Contact">
-        <div class="Column_3"> <!--Left Column - IMAGE-->
-            <img src="Stylesheet/Images/Contact.jpg">
-        </div>
-        <div class="Column_1"> <!--Right Column - CONTACT FORM-->
+    <div id="Contact"> 
+        <button onclick="openForm()" class="Pop_Up_Button"> CONTACT </button>
+          <div class="form-popup" id="myForm">
+            <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container"> 
+                <!-- Here we are using a free online service from https://formspree.io/ 
+                    to send our contact form to an email address of our choosing - 
+                    note: it will not run unless live on the internet, you have to push it to your online website first -->
             <h1>Contact</h1>
-                <form action="" method="get"> <!--specifies where to send the form data and how; left blank (for now?)-->
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here.">
-                    <label>Email</label>
-                        <input type="text" id="Email" placeholder="Please enter your email here.">
-                    <label>Message</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here.">
-                        <input type="submit" value="submit">
-                </form>
-        </div>
-    </div>
+                <label for="name"><b>Name</b></label>
+                  <input type="text" placeholder="Type your name here" name="name" required>
+                <label for="phone"><b>Phone</b></label>
+                  <input type="text" placeholder="Enter your phone number here" name="phone">
+                <label for="email"><b>Email</b></label>		
+                  <input type="text" placeholder="Type your email address here" name="email" required>
+                <label for="message"><b>Message</b></label>
+                  <input type="text" placeholder="Type your message here" name="message">
+     
+        <button type="submit" class="btn">SUBMIT</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+            </form>
+          </div>
+      </div>
     <!--FOOTER SECTION-->
     <footer>
         <p>
@@ -115,6 +186,6 @@
         </p>
     </footer>
 
-
+<script src="JS/Cath_Portfolio.js"></script>
 </body>
 <</html>
